@@ -4,12 +4,12 @@ Create an SSH key for your EC2 instances (e.g. my-ssh-key). Make sure to import 
 
 Create CloudFormation stack in US East 1 region:
 ```
-aws cloudformation create-stack --region us-east-1 --stack-name NetworkingDemo --template-body file:///<path-to-project>/templates/vpc-1.yaml --parameters ParameterKey=VPCCidrBlock,ParameterValue='10.1.0.0/16' ParameterKey=KeyName,ParameterValue=my-ssh-key ParameterKey=ImageId,ParameterValue=ami-0323c3dd2da7fb37d
+aws cloudformation create-stack --region us-east-1 --stack-name NetworkingDemo --template-body file:///`pwd`/templates/vpc-1.yaml --parameters ParameterKey=VPCCidrBlock,ParameterValue='10.1.0.0/16' ParameterKey=KeyName,ParameterValue=my-ssh-key ParameterKey=ImageId,ParameterValue=ami-0323c3dd2da7fb37d
 ```
 
 Create CloudFormation stack in US West 1 region:
 ```
-aws cloudformation create-stack --region us-west-1 --stack-name NetworkingDemo --template-body file:///<path-to-project>/templates/vpc-1.yaml --parameters ParameterKey=VPCCidrBlock,ParameterValue='10.2.0.0/16' ParameterKey=KeyName,ParameterValue=my-ssh-key ParameterKey=ImageId,ParameterValue=ami-06fcc1f0bc2c8943f
+aws cloudformation create-stack --region us-west-1 --stack-name NetworkingDemo --template-body file:///`pwd`/templates/vpc-1.yaml --parameters ParameterKey=VPCCidrBlock,ParameterValue='10.2.0.0/16' ParameterKey=KeyName,ParameterValue=my-ssh-key ParameterKey=ImageId,ParameterValue=ami-06fcc1f0bc2c8943f
 ```
 
 Delete CloudFormation stacks:

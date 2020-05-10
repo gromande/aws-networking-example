@@ -97,6 +97,9 @@ Resources:
   PublicRouteTable1:
     Type: 'AWS::EC2::RouteTable'
     Properties:
+      Tags:
+        - Key: 'Name'
+          Value: 'PublicRouteTable1'
       VpcId: !Ref VPC1
   PublicRoute1:
     Type: 'AWS::EC2::Route'
@@ -114,6 +117,23 @@ Resources:
     Properties:
       RouteTableId: !Ref PublicRouteTable1
       SubnetId: !Ref PublicSubnet1b
+  PrivateRouteTable1:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      Tags:
+        - Key: 'Name'
+          Value: 'PrivateRouteTable1'
+      VpcId: !Ref VPC1
+  PrivateSubnetRouteTableAssociation1a:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable1
+      SubnetId: !Ref PrivateSubnet1a
+  PrivateSubnetRouteTableAssociation1b:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PublicRouteTable1
+      SubnetId: !Ref PrivateSubnet1b
   BastionHostSecurityGroup1:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
