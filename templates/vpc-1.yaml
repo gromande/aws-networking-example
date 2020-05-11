@@ -132,7 +132,7 @@ Resources:
   PrivateSubnetRouteTableAssociation1b:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
-      RouteTableId: !Ref PublicRouteTable1
+      RouteTableId: !Ref PrivateRouteTable1
       SubnetId: !Ref PrivateSubnet1b
   BastionHostSecurityGroup1:
     Type: 'AWS::EC2::SecurityGroup'
